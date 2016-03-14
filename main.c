@@ -2,36 +2,13 @@
 #include <util/delay.h>
 #include <stdlib.h>
 
-void initADC()
-{
-  /* this function initialises the ADC 
+#define bit_get(p, m) (((p) >> m) & 1)
+#define bit_set(p, m) ((p) |= (1 << m))
+#define bit_clear(p, m) ((p) &= ~(1 << m))
+#define bit_flip(p, m) ((p) ^= (1 << m))
+#define bit_write(c, p, m) (c ? bit_set(p, m) : bit_clear(p, m))
 
-        ADC Prescaler Notes:
-	--------------------
-
-	   ADC Prescaler needs to be set so that the ADC input frequency is between 50 - 200kHz.
-  
-           For more information, see table 17.5 "ADC Prescaler Selections" in 
-           chapter 17.13.2 "ADCSRA – ADC Control and Status Register A"
-          (pages 140 and 141 on the complete ATtiny25/45/85 datasheet, Rev. 2586M–AVR–07/10)
-
-           Valid prescaler values for various clock speeds
-	
-	     Clock   Available prescaler values
-           ---------------------------------------
-             1 MHz   8 (125kHz), 16 (62.5kHz)
-             4 MHz   32 (125kHz), 64 (62.5kHz)
-             8 MHz   64 (125kHz), 128 (62.5kHz)
-            16 MHz   128 (125kHz)
-
-           Below example set prescaler to 128 for mcu running at 8MHz
-           (check the datasheet for the proper bit values to set the prescaler)
-  */
-
-  // 8-bit resolution
-  // set ADLAR to 1 to enable the Left-shift result (only bits ADC9..ADC2 are available)
-  // then, only reading ADCH is sufficient for 8-bit results (256 values)
-
+void initADC() {
   ADMUX =
             (1 << ADLAR) |     // left shift result
             (0 << REFS1) |     // Sets ref. voltage to VCC, bit 1
@@ -54,16 +31,41 @@ int readAdc() {
 	return ADCH;
 }
 
-int	main(void)
-{
+char isLatchClosed() {
+  bit_set(PORTB, 2);              // powering hall sensor up
+  int value = abs(readAdc() - 128);
+  bit_clear(PORTB, 2);            // power down hall sensor
+  return value <= 5;
+}
+
+void beep() {
+  int i;
+  for (i=0; i<3; i++) {
+    bit_set(PORTB, 3);
+    _delay_ms(100);
+    bit_clear(PORTB, 3);
+    _delay_ms(100);
+  }
+}
+
+void ledIndicate() {
+  bit_set(PORTB, 1);
+  _delay_ms(200);
+  bit_clear(PORTB, 1);
+}
+
+int	main(void) {
 	initADC();
-	DDRB = _BV(PINB3);
-	for (;;) {
-		if (abs(readAdc() - 128) > 5) {
-			PORTB |= _BV(PINB3);
-		}else{
-			PORTB &= ~_BV(PINB3);
+	DDRB = _BV(PINB2) | _BV(PINB3) | _BV(PINB1);
+  PORTB = 0;            // disable all pull ups and clearing ouput
+
+  for (;;) {
+		if (isLatchClosed()) {
+			beep();
 		}
+    ledIndicate();
+    _delay_ms(1000);
 	}
 	return 0;
 }
+
