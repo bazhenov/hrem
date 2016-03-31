@@ -7,7 +7,7 @@ OBJECTS = *.o
 all:	main.hex
 
 main.bin:
-		$(GCC) -o main.bin *.c
+	$(GCC) -o main.bin *.c
 
 main.hex:	main.bin
 	avr-objcopy -j .text -j .data -O ihex main.bin main.hex

@@ -16,14 +16,14 @@ void setup() {
   cli();
 
   bit_clear(MCUSR, WDRF); // Clear the reset flag
-  
+
   /* Enabling watchdog */ {
     WDTCR |= _BV(WDCE) | _BV(WDE);
     WDTCR = _BV(WDP3) | _BV(WDP0) | _BV(WDIE);
 
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);   /* EDIT: could also use SLEEP_MODE_PWR_DOWN for lowest power consumption. */
   }
-  
+
   sei();
 }
 
@@ -37,8 +37,8 @@ int readAdc() {
     (1 << MUX1)  |     // use ADC2 for input (PB4), MUX bit 1
     (0 << MUX0);       // use ADC2 for input (PB4), MUX bit 0
 
-  ADCSRA = 
-    (1 << ADEN)  |     // Enable ADC 
+  ADCSRA =
+    (1 << ADEN)  |     // Enable ADC
     (0 << ADPS2) |     // set prescaler
     (0 << ADPS1) |     // set prescaler
     (0 << ADPS0);      // set prescaler
@@ -61,14 +61,14 @@ void enterSleep() {
 
   // Disabling all peripherals
   PORTB = 0;
-  
+
   // Disable Brown out Detection
   sleep_bod_disable();
-  
+
   wdt_reset();
   /* Now enter sleep mode. */
   sleep_mode();
-  
+
   /* Re-enable the peripherals. */
   power_all_enable();
 }
@@ -105,4 +105,3 @@ int	main(void) {
 	}
 	return 0;
 }
-
