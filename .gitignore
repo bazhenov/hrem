@@ -2,4 +2,6 @@
 *.hex
 *.pdf
 eagle/*.lck
+eagle/*.s#*
+eagle/*.b#*
 
