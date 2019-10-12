@@ -4,4 +4,5 @@
 eagle/*.lck
 eagle/*.s#*
 eagle/*.b#*
+*.sch-bak
 
