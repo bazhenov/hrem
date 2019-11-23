@@ -12,6 +12,11 @@
 #define bit_flip(p, m) ((p) ^= (1 << m))
 #define bit_write(c, p, m) (c ? bit_set(p, m) : bit_clear(p, m))
 
+// User button
+#define PIN_BUTTON PINB2
+#define PIN_LED PINB1
+#define PIN_HALL_POWER PINB0
+
 void setup() {
   cli();
 
@@ -21,9 +26,30 @@ void setup() {
     WDTCR |= _BV(WDCE) | _BV(WDE);
     WDTCR = _BV(WDP3) | _BV(WDP0) | _BV(WDIE);
 
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN);   /* EDIT: could also use SLEEP_MODE_PWR_DOWN for lowest power consumption. */
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
   }
 
+  // Enable button interrupt
+    
+  // Triggering interrupt on low level
+  MCUCR |= (0 << ISC01) | (0 << ISC00);
+  // Enabling interrupt on INT0 channel  
+  GIMSK = 1 << INT0;
+
+  SREG |= (1 << 7);
+
+  sei();
+}
+
+void ledIndicate() {
+  bit_set(PORTB, PIN_LED);
+  _delay_ms(200);
+  bit_clear(PORTB, PIN_LED);
+}
+
+ISR(INT0_vect) {
+  cli();
+  beep();
   sei();
 }
 
@@ -32,10 +58,10 @@ int readAdc() {
     (1 << ADLAR) |     // left shift result
     (0 << REFS1) |     // Sets ref. voltage to VCC, bit 1
     (0 << REFS0) |     // Sets ref. voltage to VCC, bit 0
-    (0 << MUX3)  |     // use ADC2 for input (PB4), MUX bit 3
-    (0 << MUX2)  |     // use ADC2 for input (PB4), MUX bit 2
-    (1 << MUX1)  |     // use ADC2 for input (PB4), MUX bit 1
-    (0 << MUX0);       // use ADC2 for input (PB4), MUX bit 0
+    (0 << MUX3)  |     // use ADC3 for input (PB3)
+    (0 << MUX2)  |     // use ADC3 for input (PB3)
+    (1 << MUX1)  |     // use ADC3 for input (PB3)
+    (0 << MUX0);       // use ADC3 for input (PB3)
 
   ADCSRA =
     (1 << ADEN)  |     // Enable ADC
@@ -49,9 +75,9 @@ int readAdc() {
 }
 
 char isLatchClosed() {
-  bit_set(PORTB, 2);              // powering hall sensor up
+  bit_set(PORTB, PIN_HALL_POWER);
   int value = abs(readAdc() - 128);
-  bit_clear(PORTB, 2);            // power down hall sensor
+  bit_clear(PORTB, PIN_HALL_POWER);
   return value <= 5;
 }
 
@@ -59,8 +85,8 @@ void enterSleep() {
   // Disabling ADC
   ADCSRA = 0;
 
-  // Disabling all peripherals
-  PORTB = 0;
+  // Disabling Hall Effect Sensor
+  PORTB ^= 1 << PIN_HALL_POWER;
 
   // Disable Brown out Detection
   sleep_bod_disable();
@@ -83,22 +109,16 @@ void beep() {
   }
 }
 
-void ledIndicate() {
-  bit_set(PORTB, 1);
-  _delay_ms(200);
-  bit_clear(PORTB, 1);
-}
-
 int	main(void) {
 	setup();
-	DDRB = _BV(PINB2) | _BV(PINB3) | _BV(PINB1);
-  PORTB = 0;            // disable all pull ups and clearing ouput
+	DDRB = _BV(PIN_HALL_POWER) | _BV(PINB3) | _BV(PIN_LED);
+  PORTB = _BV(PIN_BUTTON);
 
   for (;;) {
     cli();
     ledIndicate();
 		if (isLatchClosed()) {
-			beep();
+			//beep();
 		}
     sei();
     enterSleep();
