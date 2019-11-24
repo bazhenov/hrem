@@ -6,21 +6,16 @@
 #include <avr/wdt.h>
 #include <avr/interrupt.h>
 
-#define bit_get(p, m) (((p) >> m) & 1)
-#define bit_set(p, m) ((p) |= (1 << m))
-#define bit_clear(p, m) ((p) &= ~(1 << m))
-#define bit_flip(p, m) ((p) ^= (1 << m))
-#define bit_write(c, p, m) (c ? bit_set(p, m) : bit_clear(p, m))
-
 // User button
 #define PIN_BUTTON PINB2
 #define PIN_LED PINB1
 #define PIN_HALL_POWER PINB0
+#define PIN_BUZZER PINB3
 
 void setup() {
   cli();
 
-  bit_clear(MCUSR, WDRF); // Clear the reset flag
+  MCUSR &= ~_BV(WDRF); // Clear the reset flag
 
   /* Enabling watchdog */ {
     WDTCR |= _BV(WDCE) | _BV(WDE);
@@ -42,9 +37,9 @@ void setup() {
 }
 
 void ledIndicate() {
-  bit_set(PORTB, PIN_LED);
-  _delay_ms(200);
-  bit_clear(PORTB, PIN_LED);
+  PORTB |= _BV(PIN_LED);
+  _delay_ms(50);
+  PORTB &= ~_BV(PIN_LED);
 }
 
 ISR(INT0_vect) {
@@ -69,15 +64,15 @@ int readAdc() {
     (0 << ADPS1) |     // set prescaler
     (0 << ADPS0);      // set prescaler
 
-  bit_set(ADCSRA, ADSC);          // start ADC measurement
-	while (ADCSRA & (1 << ADSC));  // wait till conversion complete
+  ADCSRA |= _BV(ADSC);           // start ADC measurement
+	while (ADCSRA & _BV(ADSC));  // wait till conversion complete
 	return ADCH;
 }
 
 char isLatchClosed() {
-  bit_set(PORTB, PIN_HALL_POWER);
+  PORTB |= _BV(PIN_HALL_POWER);
   int value = abs(readAdc() - 128);
-  bit_clear(PORTB, PIN_HALL_POWER);
+  PORTB &= ~_BV(PIN_HALL_POWER);
   return value <= 5;
 }
 
@@ -86,7 +81,7 @@ void enterSleep() {
   ADCSRA = 0;
 
   // Disabling Hall Effect Sensor
-  PORTB ^= 1 << PIN_HALL_POWER;
+  PORTB &= ~_BV(PIN_HALL_POWER);
 
   // Disable Brown out Detection
   sleep_bod_disable();
@@ -102,16 +97,16 @@ void enterSleep() {
 void beep() {
   int i;
   for (i=0; i<3; i++) {
-    bit_set(PORTB, 3);
-    _delay_ms(100);
-    bit_clear(PORTB, 3);
-    _delay_ms(100);
+    PORTB |= _BV(PIN_BUZZER);
+    _delay_ms(50);
+    PORTB &= ~_BV(PIN_BUZZER);
+    _delay_ms(50);
   }
 }
 
 int	main(void) {
 	setup();
-	DDRB = _BV(PIN_HALL_POWER) | _BV(PINB3) | _BV(PIN_LED);
+	DDRB = _BV(PIN_HALL_POWER) | _BV(PIN_BUZZER) | _BV(PIN_LED);
   PORTB = _BV(PIN_BUTTON);
 
   for (;;) {
