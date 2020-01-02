@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name hrem)(type Legacy)(uri ${KIPRJMOD}/hrem.lib)(options "")(descr ""))
+  (lib (name hrem-rescue)(type Legacy)(uri ${KIPRJMOD}/hrem-rescue.lib)(options "")(descr ""))
 )
