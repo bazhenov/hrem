@@ -12,6 +12,16 @@
 #define PIN_HALL_POWER PINB0
 #define PIN_BUZZER PINB3
 
+void beep() {
+  int i;
+  for (i=0; i<3; i++) {
+    PORTB |= _BV(PIN_BUZZER);
+    _delay_ms(50);
+    PORTB &= ~_BV(PIN_BUZZER);
+    _delay_ms(50);
+  }
+}
+
 void setup() {
   cli();
 
@@ -92,16 +102,6 @@ void enterSleep() {
 
   /* Re-enable the peripherals. */
   power_all_enable();
-}
-
-void beep() {
-  int i;
-  for (i=0; i<3; i++) {
-    PORTB |= _BV(PIN_BUZZER);
-    _delay_ms(50);
-    PORTB &= ~_BV(PIN_BUZZER);
-    _delay_ms(50);
-  }
 }
 
 int	main(void) {
