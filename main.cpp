@@ -10,7 +10,7 @@
 #define PIN_BUTTON PINB2
 #define PIN_LED PINB1
 #define PIN_HALL_POWER PINB0
-#define PIN_BUZZER PINB3
+#define PIN_BUZZER PINB4
 
 void beep() {
   int i;
@@ -50,6 +50,7 @@ void ledIndicate() {
   PORTB |= _BV(PIN_LED);
   _delay_ms(50);
   PORTB &= ~_BV(PIN_LED);
+  _delay_ms(50);
 }
 
 ISR(INT0_vect) {
