@@ -510,7 +510,7 @@ U 1 1 5DE5E530
 P 8350 5450
 F 0 "J1" H 8400 5867 50  0000 C CNN
 F 1 "ICSP" H 8400 5776 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 8350 5450 50  0001 C CNN
+F 2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" H 8350 5450 50  0001 C CNN
 F 3 "~" H 8350 5450 50  0001 C CNN
 	1    8350 5450
 	1    0    0    -1  
