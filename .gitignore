@@ -1,5 +1,6 @@
 *.bin
 *.hex
+*.o
 *.pdf
 eagle/*.lck
 eagle/*.s#*

@@ -7,17 +7,22 @@ CXXFLAGS = -Wall -Os -I. -mmcu=$(MCU) -DF_CPU=$(F_CPU)
 
 all:	main.hex
 
-main.hex:	main.bin
-	avr-objcopy -j .text -j .data -O ihex main.bin main.hex
+SOURCES := $(wildcard lib/*.cpp)
+OBJECTS := $(SOURCES:.cpp=.o)
 
-main.bin: *.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $<
+%.hex: %.bin
+	avr-objcopy -j .text -j .data -O ihex $< $@
+
+lib/%.o: lib/%.cpp
+
+%.bin: %.o $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 	avr-size -d --mcu=$(MCU) -C $@
 
 clean:
-	rm -f main.hex main.o main.bin
+	rm -f *.hex *.o *.bin lib/*.o
 
-flash: main.hex
+flash-%: %.hex
 	avrdude -c $(PROGRAMMER) -p $(MCU) -U flash:w:$<
 
-.PHONY: flash clean
+.PHONY: flash-* clean
