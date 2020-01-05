@@ -1,15 +1,16 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <lib/button.h>
-#include <lib/led.h>
+#include <lib/DigitalOutput.h>
 
 int main() {
   
-  Button b(DDRB, PORTB, PINB2);
-  Led led(DDRB, PORTB, PINB1);
+  Button<Port::B> button(2);
+
+  DigitalOutput<Port::B> led(1);
 
   for (;;) {
-    if (b.peek() == Response::Click) {
+    if (button.peek() == Response::Click) {
       led.toggle();
       _delay_ms(100);
     }

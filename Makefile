@@ -22,7 +22,7 @@ lib/%.o: lib/%.cpp
 clean:
 	rm -f *.hex *.o *.bin lib/*.o
 
-flash-%: %.hex
+%.flash: %.hex
 	avrdude -c $(PROGRAMMER) -p $(MCU) -U flash:w:$<
 
-.PHONY: flash-* clean
+.PHONY: *.flash clean

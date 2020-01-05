@@ -2,20 +2,26 @@
 #define _BUTTON_H_
 
 #include <stdint.h>
+#include <avr/io.h>
+#include "common.h"
 
 enum Response {
   None, Click, LongPress
 };
 
+template<int T>
 class Button {
   private:
-  volatile uint8_t& _port;
   uint8_t _pin;
 
   public:
-  Button(volatile uint8_t& ddr, volatile uint8_t& port, uint8_t pin);
+  Button(uint8_t pin);
 
   Response peek();
 };
+
+#ifdef PORTB
+  template class Button<Port::B>;
+#endif
 
 #endif
