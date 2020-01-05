@@ -12,6 +12,7 @@ main.hex:	main.bin
 
 main.bin: *.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<
+	avr-size -d --mcu=$(MCU) -C $@
 
 clean:
 	rm -f main.hex main.o main.bin
