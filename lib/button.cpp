@@ -2,17 +2,17 @@
 #include <avr/sfr_defs.h>
 #include <avr/io.h>
 
-template <int PORT>
-Button<PORT>::Button(uint8_t pin, buttonCallback* callback)
+template <class P>
+Button<P>::Button(uint8_t pin, buttonCallback* callback)
   : _pin(pin), _callback(callback), _state(RELEASED) {
 
-  ddr_ref<PORT>() &= ~_BV(_pin);
-  port_ref<PORT>() |= _BV(_pin);
+  P::ddr() &= ~_BV(_pin);
+  P::port() |= _BV(_pin);
 }
 
-template <int PORT>
-void Button<PORT>::peek() {
-  bool pressed = (pin_ref<PORT>() & _BV(_pin)) == 0;
+template <class P>
+void Button<P>::peek() {
+  bool pressed = (P::pin() & _BV(_pin)) == 0;
   switch ( _state ) {
     case RELEASED:
       if ( pressed )

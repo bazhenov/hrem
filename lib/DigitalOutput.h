@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "common.h"
 
-template <int port>
+template <class P>
 class DigitalOutput {
 
   private:
@@ -19,7 +19,7 @@ class DigitalOutput {
 };
 
 #ifdef PORTB
-template class DigitalOutput<Port::B>;
+template class DigitalOutput<PortB>;
 #endif
 
 #endif

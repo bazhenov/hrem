@@ -3,10 +3,10 @@
 #include <lib/button.h>
 #include <lib/DigitalOutput.h>
 
-void handle_click(Response response);
+void handle_click(EventType response);
 
-Button<Port::B> button(2, &handle_click);
-DigitalOutput<Port::B> led(1);
+Button<PortB> button(2, &handle_click);
+DigitalOutput<PortB> led(1);
 
 int main() {
   for (;;) {
@@ -15,7 +15,7 @@ int main() {
   }
 }
 
-void handle_click(Response response) {
+void handle_click(EventType response) {
   if (response == Click)
     led.toggle();
   else if ( response == LongPress ) {

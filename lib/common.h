@@ -5,24 +5,12 @@
 
 typedef volatile uint8_t register8_t;
 
-template<int port>
-register8_t& ddr_ref();
-
-template<int port>
-register8_t& port_ref();
-
-template<int port>
-register8_t& pin_ref();
-
-
-
-enum Port {
-#ifdef PORTA
-  A,
-#endif
 #ifdef PORTB
-  B,
+typedef struct {
+  static register8_t& port() { return PORTB; }
+  static register8_t& ddr() { return DDRB; }
+  static register8_t& pin() { return PINB; }
+} PortB;
 #endif
-};
 
 #endif

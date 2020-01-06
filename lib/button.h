@@ -5,17 +5,17 @@
 #include <avr/io.h>
 #include "common.h"
 
-enum Response {
+enum EventType {
   None, Click, LongPress
 };
 
-typedef void buttonCallback(Response response);
+typedef void buttonCallback(EventType response);
 
 enum State {
   RELEASED, MAYBE_PRESSED, PRESSED, MAYBE_RELEASED, LONG_PRESSED, LONG_PRESS_MAYBE_RELEASE
 };
 
-template<int T>
+template<class P>
 class Button {
   private:
   uint8_t _pin;
@@ -30,7 +30,7 @@ class Button {
 };
 
 #ifdef PORTB
-  template class Button<Port::B>;
+  template class Button<PortB>;
 #endif
 
 #endif
