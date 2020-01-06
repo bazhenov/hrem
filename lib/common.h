@@ -5,6 +5,18 @@
 
 typedef volatile uint8_t register8_t;
 
+class PollBase {
+  public:
+  virtual uint16_t poll() = 0;
+};
+
+typedef struct {
+  PollBase& component;
+  uint32_t deadline = 0;
+} PollingEntry;
+
+void run_poll_loop(PollingEntry* components, uint8_t size);
+
 #ifdef PORTB
 typedef struct {
   static register8_t& port() { return PORTB; }

@@ -16,7 +16,7 @@ enum State {
 };
 
 template<class P>
-class Button {
+class Button : public PollBase {
   private:
   uint8_t _pin;
   buttonCallback* _callback = 0;
@@ -25,8 +25,7 @@ class Button {
 
   public:
   Button(uint8_t pin, buttonCallback* callback);
-
-  void peek();
+  uint16_t poll();
 };
 
 #ifdef PORTB

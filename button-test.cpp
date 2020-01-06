@@ -9,10 +9,11 @@ Button<PortB> button(2, &handle_click);
 DigitalOutput<PortB> led(1);
 
 int main() {
-  for (;;) {
-    button.peek();
-    _delay_ms(10);
-  }
+  PollingEntry entries[] = {
+    {button}
+  };
+
+  run_poll_loop(entries, sizeof(entries) / sizeof(entries[0]));
 }
 
 void handle_click(EventType response) {
@@ -23,4 +24,4 @@ void handle_click(EventType response) {
       led.strobe(50);
     }
   }
-};
+}
