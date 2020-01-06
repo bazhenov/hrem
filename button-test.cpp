@@ -20,10 +20,7 @@ void handle_click(EventType response) {
     led.toggle();
   else if ( response == LongPress ) {
     for (int i=0; i < 3; i ++) {
-      led.toggle();
-      _delay_ms(50);
-      led.toggle();
-      _delay_ms(50);
+      led.strobe(50);
     }
   }
 };

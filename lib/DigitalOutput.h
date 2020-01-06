@@ -16,6 +16,8 @@ class DigitalOutput {
   void toggle();
   void off();
   void on();
+
+  void strobe(uint16_t delayMs);
 };
 
 #ifdef PORTB

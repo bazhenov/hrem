@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <util/delay.h>
 #include "DigitalOutput.h"
 
 template <class P>
@@ -19,4 +20,12 @@ void DigitalOutput<P>::off() {
 template <class P>
 void DigitalOutput<P>::toggle() {
   P::port() ^= _BV(_pin);
+}
+
+template <class P>
+void DigitalOutput<P>::strobe(uint16_t delayMs) {
+  on();
+  _delay_ms(50);
+  off();
+  _delay_ms(50);
 }
