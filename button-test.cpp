@@ -5,8 +5,9 @@
 
 void handle_click(EventType response);
 
-Button<PortB> button(2, &handle_click);
-DigitalOutput<PortB> led(1);
+Button<PortB, 2> button(&handle_click);
+DigitalOutput<PortB, 1> led;
+DigitalOutput<PortB, 4> buzzer;
 
 int main() {
   PollingEntry entries[] = {
@@ -21,7 +22,8 @@ void handle_click(EventType response) {
     led.toggle();
   else if ( response == LongPress ) {
     for (int i=0; i < 3; i ++) {
-      led.strobe(50);
+      led.strobe(100);
+      buzzer.strobe(100);
     }
   }
 }

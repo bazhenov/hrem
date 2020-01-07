@@ -1,2 +1,6 @@
 {
+  "files.associations": {
+    "type_traits": "cpp",
+    "*.inc": "cpp"
+  }
 }

@@ -15,21 +15,20 @@ enum State {
   RELEASED, MAYBE_PRESSED, PRESSED, MAYBE_RELEASED, LONG_PRESSED, LONG_PRESS_MAYBE_RELEASE
 };
 
-template<class P>
+template<class PORT, int PIN>
 class Button : public PollBase {
   private:
-  uint8_t _pin;
   buttonCallback* _callback = 0;
   uint8_t _pressDuration = 0;
   State _state;
 
   public:
-  Button(uint8_t pin, buttonCallback* callback);
+  Button(buttonCallback* callback);
   uint16_t poll();
 };
 
 #ifdef PORTB
-  template class Button<PortB>;
+  template class Button<PortB, 2>;
 #endif
 
 #endif

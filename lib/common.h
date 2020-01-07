@@ -19,9 +19,9 @@ void run_poll_loop(PollingEntry* components, uint8_t size);
 
 #ifdef PORTB
 typedef struct {
-  static register8_t& port() { return PORTB; }
-  static register8_t& ddr() { return DDRB; }
-  static register8_t& pin() { return PINB; }
+  static inline register8_t& port() { return PORTB; }
+  static inline register8_t& ddr() { return DDRB; }
+  static inline register8_t& pin() { return PINB; }
 } PortB;
 #endif
 

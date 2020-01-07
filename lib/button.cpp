@@ -4,17 +4,17 @@
 
 #define POLL_INTERVAL 10
 
-template <class P>
-Button<P>::Button(uint8_t pin, buttonCallback* callback)
-  : _pin(pin), _callback(callback), _state(RELEASED) {
+template <class PORT, int PIN>
+Button<PORT, PIN>::Button(buttonCallback* callback)
+  : _callback(callback), _state(RELEASED) {
 
-  P::ddr() &= ~_BV(_pin);
-  P::port() |= _BV(_pin);
+  PORT::ddr() &= ~_BV(PIN);
+  PORT::port() |= _BV(PIN);
 }
 
-template <class P>
-uint16_t Button<P>::poll() {
-  bool pressed = (P::pin() & _BV(_pin)) == 0;
+template <class PORT, int PIN>
+uint16_t Button<PORT, PIN>::poll() {
+  bool pressed = (PORT::pin() & _BV(PIN)) == 0;
   switch ( _state ) {
     case RELEASED:
       if ( pressed )
