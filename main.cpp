@@ -55,7 +55,7 @@ void ledIndicate() {
 
 ISR(INT0_vect) {
   cli();
-  beep();
+  //beep();
   sei();
 }
 
@@ -67,7 +67,7 @@ int readAdc() {
     (0 << MUX3)  |     // use ADC3 for input (PB3)
     (0 << MUX2)  |     // use ADC3 for input (PB3)
     (1 << MUX1)  |     // use ADC3 for input (PB3)
-    (0 << MUX0);       // use ADC3 for input (PB3)
+    (1 << MUX0);       // use ADC3 for input (PB3)
 
   ADCSRA =
     (1 << ADEN)  |     // Enable ADC
@@ -82,9 +82,10 @@ int readAdc() {
 
 char isLatchClosed() {
   PORTB |= _BV(PIN_HALL_POWER);
+  //_delay_ms(2000);
   int value = abs(readAdc() - 128);
   PORTB &= ~_BV(PIN_HALL_POWER);
-  return value <= 5;
+  return value > 5;
 }
 
 void enterSleep() {
@@ -113,8 +114,8 @@ int	main(void) {
   for (;;) {
     cli();
     ledIndicate();
-		if (isLatchClosed()) {
-			//beep();
+		if (!isLatchClosed()) {
+			beep();
 		}
     sei();
     enterSleep();
