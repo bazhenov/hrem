@@ -19,7 +19,7 @@ U 1 1 5D9F2256
 P 7000 2150
 F 0 "U2" H 6470 2196 50  0000 R CNN
 F 1 "ATtiny85" H 6470 2105 50  0000 R CNN
-F 2 "Package_DIP:DIP-8_W7.62mm_Socket" H 7000 2150 50  0001 C CIN
+F 2 "Package_SO:SOIC-8_5.23x5.23mm_P1.27mm" H 7000 2150 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 7000 2150 50  0001 C CNN
 	1    7000 2150
 	1    0    0    -1  
@@ -52,21 +52,11 @@ U 1 1 5DA02C90
 P 2600 1850
 F 0 "C1" H 2718 1896 50  0000 L CNN
 F 1 "47uF" H 2718 1805 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 2638 1700 50  0001 C CNN
-F 3 "~" H 2600 1850 50  0001 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-15_AVX-H_Pad1.50x2.35mm_HandSolder" H 2638 1700 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/AVX-TAJB476K010RNJ_C22036.pdf" H 2600 1850 50  0001 C CNN
+F 4 "TAJB476K010RNJ" H 2600 1850 50  0001 C CNN "Part"
 	1    2600 1850
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:LED_Small D2
-U 1 1 5DA03F1D
-P 9150 1400
-F 0 "D2" H 9150 1195 50  0000 C CNN
-F 1 "LED" H 9150 1286 50  0000 C CNN
-F 2 "LED_THT:LED_D5.0mm" V 9150 1400 50  0001 C CNN
-F 3 "~" V 9150 1400 50  0001 C CNN
-	1    9150 1400
-	-1   0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR0101
@@ -85,8 +75,9 @@ U 1 1 5DA21DD4
 P 4500 1950
 F 0 "C2" H 4618 1996 50  0000 L CNN
 F 1 "22uF" H 4618 1905 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 4538 1800 50  0001 C CNN
-F 3 "~" H 4500 1950 50  0001 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-15_AVX-H_Pad1.50x2.35mm_HandSolder" H 4538 1800 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/AVX-TAJB226K010RNJ_C7198.pdf" H 4500 1950 50  0001 C CNN
+F 4 "TAJB226K010RNJ" H 4500 1950 50  0001 C CNN "Part"
 	1    4500 1950
 	1    0    0    -1  
 $EndComp
@@ -95,9 +86,10 @@ L Diode:1N5817 D1
 U 1 1 5DA2B0D3
 P 3750 1600
 F 0 "D1" H 3750 1384 50  0000 C CNN
-F 1 "1N5817" H 3750 1475 50  0000 C CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3750 1425 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 3750 1600 50  0001 C CNN
+F 1 "SS14-E3/61T" H 3750 1475 50  0000 C CNN
+F 2 "Diode_SMD:D_SMA_Handsoldering" H 3750 1425 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Vishay-Intertech-SS14-E3-61T_C47460.pdf" H 3750 1600 50  0001 C CNN
+F 4 "C47460" H 3750 1600 50  0001 C CNN "Part"
 	1    3750 1600
 	-1   0    0    1   
 $EndComp
@@ -182,38 +174,17 @@ F 3 "" H 7000 1250 50  0001 C CNN
 	1    7000 1250
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R R3
-U 1 1 5DA9218E
-P 8850 1400
-F 0 "R3" V 8950 1400 50  0000 L CNN
-F 1 "68R" V 8750 1350 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8780 1400 50  0001 C CNN
-F 3 "~" H 8850 1400 50  0001 C CNN
-	1    8850 1400
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	7600 1950 8000 1950
-$Comp
-L power:GND #PWR0107
-U 1 1 5DA944A0
-P 9250 1500
-F 0 "#PWR0107" H 9250 1250 50  0001 C CNN
-F 1 "GND" H 9255 1327 50  0000 C CNN
-F 2 "" H 9250 1500 50  0001 C CNN
-F 3 "" H 9250 1500 50  0001 C CNN
-	1    9250 1500
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R R2
 U 1 1 5DA03592
 P 8050 2550
 F 0 "R2" H 7900 2600 50  0000 L CNN
 F 1 "680R" H 7800 2500 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7980 2550 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7980 2550 50  0001 C CNN
 F 3 "~" H 8050 2550 50  0001 C CNN
+F 4 "C410034" H 8050 2550 50  0001 C CNN "Part"
 	1    8050 2550
 	-1   0    0    1   
 $EndComp
@@ -225,8 +196,9 @@ U 1 1 5DAC64F5
 P 7750 2550
 F 0 "R1" H 7600 2600 50  0000 L CNN
 F 1 "10K" H 7550 2500 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7680 2550 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7680 2550 50  0001 C CNN
 F 3 "~" H 7750 2550 50  0001 C CNN
+F 4 "C103904" H 7750 2550 50  0001 C CNN "Part"
 	1    7750 2550
 	-1   0    0    1   
 $EndComp
@@ -272,8 +244,6 @@ SCK
 Text Label 7650 2350 0    50   ~ 0
 RST
 Wire Wire Line
-	9000 1400 9050 1400
-Wire Wire Line
 	8450 2350 8700 2350
 Wire Wire Line
 	8700 2350 8700 2400
@@ -281,8 +251,6 @@ Wire Wire Line
 	8450 2350 8450 2500
 Wire Wire Line
 	8000 1400 8000 1950
-Wire Wire Line
-	9250 1400 9250 1500
 Wire Wire Line
 	7600 2350 7750 2350
 Wire Wire Line
@@ -327,7 +295,7 @@ U 1 1 5DC3B268
 P 3900 2050
 F 0 "U1" V 3577 2100 50  0000 C CNN
 F 1 "HT7733A" V 3486 2100 50  0000 C CNN
-F 2 "hrem:HT7733" H 3900 2000 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 3900 2000 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Holtek-Semicon-HT7733A_C131130.pdf" H 3900 2000 50  0001 C CNN
 	1    3900 2050
 	0    -1   -1   0   
@@ -368,7 +336,8 @@ P 2950 1600
 F 0 "L1" H 2950 1815 50  0000 C CNN
 F 1 "100uH" H 2950 1724 50  0000 C CNN
 F 2 "Inductor_THT:L_Axial_L5.3mm_D2.2mm_P7.62mm_Horizontal_Vishay_IM-1" H 2950 1600 50  0001 C CNN
-F 3 "~" H 2950 1600 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Murata-Electronics-LQH43CN101K03L_C113087.pdf" H 2950 1600 50  0001 C CNN
+F 4 "C113087" H 2950 1600 50  0001 C CNN "Part"
 	1    2950 1600
 	1    0    0    -1  
 $EndComp
@@ -396,9 +365,10 @@ L Transistor_BJT:BC547 Q1
 U 1 1 5D9F33C3
 P 8050 3050
 F 0 "Q1" V 8285 3050 50  0000 C CNN
-F 1 "BC547" V 8376 3050 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 8250 2975 50  0001 L CIN
-F 3 "http://www.fairchildsemi.com/ds/BC/BC547.pdf" H 8050 3050 50  0001 L CNN
+F 1 "MMBT4401-7-F" V 8376 3050 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 8250 2975 50  0001 L CIN
+F 3 "https://datasheet.lcsc.com/szlcsc/Diodes-Incorporated-MMBT4401-7-F_C151826.pdf" H 8050 3050 50  0001 L CNN
+F 4 "C151826" V 8050 3050 50  0001 C CNN "Part"
 	1    8050 3050
 	0    1    1    0   
 $EndComp
@@ -410,8 +380,9 @@ U 1 1 5DB6C80A
 P 6700 1400
 F 0 "C3" V 6448 1400 50  0000 C CNN
 F 1 "100nF" V 6539 1400 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 6738 1250 50  0001 C CNN
-F 3 "~" H 6700 1400 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 6738 1250 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1902141613_Murata-Electronics-GCJ21BR71H104KA01L_C354369.pdf" H 6700 1400 50  0001 C CNN
+F 4 "C354369" V 6700 1400 50  0001 C CNN "Part"
 	1    6700 1400
 	0    1    1    0   
 $EndComp
@@ -441,8 +412,9 @@ U 1 1 5DB85F94
 P 8750 3150
 F 0 "R4" V 8850 3150 50  0000 L CNN
 F 1 "100R" V 8650 3050 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 8680 3150 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8680 3150 50  0001 C CNN
 F 3 "~" H 8750 3150 50  0001 C CNN
+F 4 "C193990" H 8750 3150 50  0001 C CNN "Part"
 	1    8750 3150
 	0    -1   -1   0   
 $EndComp
@@ -457,12 +429,12 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0111
 U 1 1 5DDF8B2E
-P 7400 950
-F 0 "#PWR0111" H 7400 700 50  0001 C CNN
-F 1 "GND" H 7405 777 50  0000 C CNN
-F 2 "" H 7400 950 50  0001 C CNN
-F 3 "" H 7400 950 50  0001 C CNN
-	1    7400 950 
+P 7300 1400
+F 0 "#PWR0111" H 7300 1150 50  0001 C CNN
+F 1 "GND" H 7305 1227 50  0000 C CNN
+F 2 "" H 7300 1400 50  0001 C CNN
+F 3 "" H 7300 1400 50  0001 C CNN
+	1    7300 1400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -470,40 +442,21 @@ Wire Wire Line
 Wire Wire Line
 	7600 1850 8900 1850
 Wire Wire Line
-	8000 1400 8700 1400
-Wire Wire Line
 	1850 1600 2600 1600
 $Comp
-L Switch:SW_Push_Dual SW1
+L Switch:SW_Push SW1
 U 1 1 5DE40789
-P 7900 1250
-F 0 "SW1" V 7900 1398 50  0000 L CNN
-F 1 "SW_Push_Dual" V 7945 1398 50  0001 L CNN
-F 2 "hrem:button" H 7900 1450 50  0001 C CNN
-F 3 "~" H 7900 1450 50  0001 C CNN
-	1    7900 1250
-	0    1    1    0   
+P 7600 1200
+F 0 "SW1" V 7600 1348 50  0000 L CNN
+F 1 "SW_Push_Dual" V 7645 1348 50  0001 L CNN
+F 2 "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm" H 7600 1400 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Diptronics-DTSM-65N-V-T-R_C224982.pdf" H 7600 1400 50  0001 C CNN
+F 4 "C224982" H 7600 1200 50  0001 C CNN "Part"
+	1    7600 1200
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7900 1450 7900 1550
-Wire Wire Line
-	7900 1550 7700 1550
-Wire Wire Line
-	7700 1550 7700 1450
-Connection ~ 7900 1550
-Wire Wire Line
-	7900 1550 7900 2050
-Wire Wire Line
-	7700 1050 7700 800 
-Wire Wire Line
-	7900 1050 7900 800 
-Wire Wire Line
-	7900 800  7700 800 
-Wire Wire Line
-	7700 800  7400 800 
-Wire Wire Line
-	7400 800  7400 950 
-Connection ~ 7700 800 
+	7300 1200 7300 1400
 $Comp
 L Connector_Generic:Conn_02x05_Odd_Even J1
 U 1 1 5DE5E530
@@ -511,7 +464,8 @@ P 8350 5450
 F 0 "J1" H 8400 5867 50  0000 C CNN
 F 1 "ICSP" H 8400 5776 50  0000 C CNN
 F 2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" H 8350 5450 50  0001 C CNN
-F 3 "~" H 8350 5450 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1811021337_JUSHUO-AFC11-S10ICC-00_C262302.pdf" H 8350 5450 50  0001 C CNN
+F 4 "C262302" H 8350 5450 50  0001 C CNN "Part"
 	1    8350 5450
 	1    0    0    -1  
 $EndComp
@@ -571,4 +525,52 @@ Wire Wire Line
 Text Label 7950 5650 0    50   ~ 0
 MISO
 NoConn ~ 8150 5350
+$Comp
+L Device:LED_Small D2
+U 1 1 5DA03F1D
+P 8700 1400
+F 0 "D2" H 8700 1195 50  0000 C CNN
+F 1 "LED" H 8700 1286 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" V 8700 1400 50  0001 C CNN
+F 3 "~" V 8700 1400 50  0001 C CNN
+	1    8700 1400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8850 1400 8800 1400
+Wire Wire Line
+	8850 1400 8850 1450
+$Comp
+L power:GND #PWR0107
+U 1 1 5DA944A0
+P 8850 1450
+F 0 "#PWR0107" H 8850 1200 50  0001 C CNN
+F 1 "GND" H 8855 1277 50  0000 C CNN
+F 2 "" H 8850 1450 50  0001 C CNN
+F 3 "" H 8850 1450 50  0001 C CNN
+	1    8850 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 1400 8600 1400
+Wire Wire Line
+	8000 1400 8250 1400
+$Comp
+L Device:R R3
+U 1 1 5DA9218E
+P 8400 1400
+F 0 "R3" V 8500 1400 50  0000 L CNN
+F 1 "68R" V 8300 1350 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8330 1400 50  0001 C CNN
+F 3 "~" H 8400 1400 50  0001 C CNN
+F 4 "C204268" H 8400 1400 50  0001 C CNN "Part"
+	1    8400 1400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7300 1200 7400 1200
+Wire Wire Line
+	7900 1200 7800 1200
+Wire Wire Line
+	7900 1200 7900 2050
 $EndSCHEMATC
