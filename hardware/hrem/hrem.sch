@@ -25,17 +25,6 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microc
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Battery_Cell BT1
-U 1 1 5D9F4947
-P 1850 1900
-F 0 "BT1" H 1968 1996 50  0000 L CNN
-F 1 "1xAAA" H 1968 1905 50  0000 L CNN
-F 2 "hrem:AAA battery" V 1850 1960 50  0001 C CNN
-F 3 "~" V 1850 1960 50  0001 C CNN
-	1    1850 1900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:Conn_01x03_Male J2
 U 1 1 5D9F6267
 P 8800 2600
@@ -122,14 +111,9 @@ Wire Wire Line
 Wire Wire Line
 	2600 1600 2700 1600
 Wire Wire Line
-	1850 2000 1850 2050
-Wire Wire Line
-	1850 2050 2200 2050
-Wire Wire Line
 	2600 2050 2600 2000
 Wire Wire Line
 	2200 2100 2200 2050
-Connection ~ 2200 2050
 Wire Wire Line
 	2200 2050 2600 2050
 Wire Wire Line
@@ -431,7 +415,7 @@ U 1 1 5DE40789
 P 7600 1200
 F 0 "SW1" V 7600 1348 50  0000 L CNN
 F 1 "SW_Push_Dual" V 7645 1348 50  0001 L CNN
-F 2 "Button_Switch_SMD:SW_Push_1P1T_NO_6x6mm_H9.5mm" H 7600 1400 50  0001 C CNN
+F 2 "hrem:Diptronics DTSM-65N" H 7600 1400 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Diptronics-DTSM-65N-V-T-R_C224982.pdf" H 7600 1400 50  0001 C CNN
 F 4 "C224982" H 7600 1200 50  0001 C CNN "Part"
 	1    7600 1200
@@ -715,30 +699,6 @@ F 3 " ~" H 8225 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint_Flag TP1
-U 1 1 5E2E9580
-P 1950 2900
-F 0 "TP1" H 2210 2948 50  0000 L CNN
-F 1 "TestPoint_Flag" H 2210 2903 50  0001 L CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 2150 2900 50  0001 C CNN
-F 3 "~" H 2150 2900 50  0001 C CNN
-	1    1950 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR02
-U 1 1 5E2ED3E9
-P 1950 3000
-F 0 "#PWR02" H 1950 2750 50  0001 C CNN
-F 1 "GND" H 1955 2827 50  0000 C CNN
-F 2 "" H 1950 3000 50  0001 C CNN
-F 3 "" H 1950 3000 50  0001 C CNN
-	1    1950 3000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1950 2900 1950 3000
-$Comp
 L Connector:TestPoint_Flag TP2
 U 1 1 5E2F0DC2
 P 4500 1750
@@ -795,4 +755,34 @@ Wire Wire Line
 	9400 5750 9400 5850
 Wire Wire Line
 	9400 4750 9400 4850
+Connection ~ 2200 2050
+Wire Wire Line
+	2050 2050 2200 2050
+Connection ~ 2050 2050
+$Comp
+L Connector:TestPoint_Flag TP1
+U 1 1 5E2E9580
+P 2050 2050
+F 0 "TP1" H 2300 2250 50  0000 R CNN
+F 1 "TestPoint_Flag" H 2310 2053 50  0001 L CNN
+F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 2250 2050 50  0001 C CNN
+F 3 "~" H 2250 2050 50  0001 C CNN
+	1    2050 2050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1850 2050 2050 2050
+Wire Wire Line
+	1850 2000 1850 2050
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5D9F4947
+P 1850 1900
+F 0 "BT1" H 1968 1996 50  0000 L CNN
+F 1 "1xAAA" H 1968 1905 50  0000 L CNN
+F 2 "hrem:AAA battery" V 1850 1960 50  0001 C CNN
+F 3 "~" V 1850 1960 50  0001 C CNN
+	1    1850 1900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
