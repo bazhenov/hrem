@@ -1,4 +1,4 @@
-update=Mon 20 Jan 2020 09:41:05 PM +10
+update=Sat 01 Feb 2020 06:34:03 PM +10
 version=1
 last_client=kicad
 [general]
@@ -28,7 +28,7 @@ PageLayoutDescrFile=
 LastNetListRead=hrem.net
 CopperLayerCount=2
 BoardThickness=1.6
-AllowMicroVias=0
+AllowMicroVias=1
 AllowBlindVias=0
 RequireCourtyardDefinitions=0
 ProhibitOverlappingCourtyards=1
