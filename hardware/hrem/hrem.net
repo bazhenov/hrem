@@ -1,14 +1,14 @@
 (export (version D)
   (design
     (source /home/bazhenov/Developer/hrem/hardware/hrem/hrem.sch)
-    (date "Sun 02 Feb 2020 07:00:58 PM +10")
+    (date "Sun 02 Feb 2020 08:18:31 PM +10")
     (tool "Eeschema 5.1.5")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title HRem)
         (company "Denis Bazhenov")
-        (rev 5)
-        (date 2019-11-24)
+        (rev 6)
+        (date 2020-02-02)
         (source hrem.sch)
         (comment (number 1) (value ""))
         (comment (number 2) (value ""))
@@ -27,7 +27,8 @@
       (footprint hrem:X8821WRS-03-9TSN)
       (datasheet https://datasheet.lcsc.com/szlcsc/1906141836_XKB-Enterprise-X8821WRS-03-9TSN_C397433.pdf)
       (fields
-        (field (name Part) C397433))
+        (field (name Part) C397433)
+        (field (name Vendor) X8821WRS-03-9TSN))
       (libsource (lib Connector) (part Conn_01x03_Male) (description "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5D9F6267))
@@ -36,7 +37,8 @@
       (footprint Capacitor_Tantalum_SMD:CP_EIA-3528-15_AVX-H_Pad1.50x2.35mm_HandSolder)
       (datasheet https://datasheet.lcsc.com/szlcsc/AVX-TAJB476K010RNJ_C22036.pdf)
       (fields
-        (field (name Part) TAJB476K010RNJ))
+        (field (name Part) C22036)
+        (field (name Vendor) TAJB476K010RNJ))
       (libsource (lib Device) (part CP) (description "Polarized capacitor"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DA02C90))
@@ -45,7 +47,8 @@
       (footprint Capacitor_Tantalum_SMD:CP_EIA-3528-15_AVX-H_Pad1.50x2.35mm_HandSolder)
       (datasheet https://datasheet.lcsc.com/szlcsc/AVX-TAJB226K010RNJ_C7198.pdf)
       (fields
-        (field (name Part) TAJB226K010RNJ))
+        (field (name Part) C7198)
+        (field (name Vendor) TAJB226K010RNJ))
       (libsource (lib Device) (part CP) (description "Polarized capacitor"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DA21DD4))
@@ -54,7 +57,8 @@
       (footprint Diode_SMD:D_SMA_Handsoldering)
       (datasheet https://datasheet.lcsc.com/szlcsc/Vishay-Intertech-SS14-E3-61T_C47460.pdf)
       (fields
-        (field (name Part) C47460))
+        (field (name Part) C47460)
+        (field (name Vendor) SS14-E3/61T))
       (libsource (lib Diode) (part 1N5817) (description "20V 1A Schottky Barrier Rectifier Diode, DO-41"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DA2B0D3))
@@ -63,7 +67,8 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet ~)
       (fields
-        (field (name Part) C410034))
+        (field (name Part) C410034)
+        (field (name Vendor) ERJ6ENF6800V))
       (libsource (lib Device) (part R) (description Resistor))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DA03592))
@@ -72,7 +77,8 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet ~)
       (fields
-        (field (name Part) C103904))
+        (field (name Part) C103904)
+        (field (name Vendor) RTT051002FTP))
       (libsource (lib Device) (part R) (description Resistor))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DAC64F5))
@@ -95,7 +101,8 @@
       (footprint "hrem:Murata LQH43")
       (datasheet https://datasheet.lcsc.com/szlcsc/Murata-Electronics-LQH43CN101K03L_C113087.pdf)
       (fields
-        (field (name Part) C113087))
+        (field (name Part) C113087)
+        (field (name Vendor) LQH43CN101K03L))
       (libsource (lib pspice) (part INDUCTOR) (description "Inductor symbol for simulation only"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DA22770))
@@ -104,7 +111,8 @@
       (footprint Package_TO_SOT_SMD:SOT-23_Handsoldering)
       (datasheet https://datasheet.lcsc.com/szlcsc/Diodes-Incorporated-MMBT4401-7-F_C151826.pdf)
       (fields
-        (field (name Part) C151826))
+        (field (name Part) C151826)
+        (field (name Vendor) MMBT4401-7-F))
       (libsource (lib Transistor_BJT) (part BC547) (description "0.1A Ic, 45V Vce, Small Signal NPN Transistor, TO-92"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5D9F33C3))
@@ -113,7 +121,8 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet ~)
       (fields
-        (field (name Part) C193990))
+        (field (name Part) C193990)
+        (field (name Vendor) ERJ6ENF1000V))
       (libsource (lib Device) (part R) (description Resistor))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DB85F94))
@@ -122,7 +131,8 @@
       (footprint "hrem:Diptronics DTSM-65N")
       (datasheet https://datasheet.lcsc.com/szlcsc/Diptronics-DTSM-65N-V-T-R_C224982.pdf)
       (fields
-        (field (name Part) C224982))
+        (field (name Part) C224982)
+        (field (name Vendor) DTSM-65N-V-T/R))
       (libsource (lib Switch) (part SW_Push) (description "Push button switch, generic, two pins"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DE40789))
@@ -140,7 +150,8 @@
       (footprint Package_TO_SOT_SMD:SOT-23-5_HandSoldering)
       (datasheet https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-SN74LVC1G125DBVR_C23654.pdf)
       (fields
-        (field (name Part) C23654))
+        (field (name Part) C23654)
+        (field (name Vendor) SN74LVC1G125DBVR))
       (libsource (lib 74xGxx) (part 74LVC1G125) (description "Single Buffer Gate Tri-State, Low-Voltage CMOS"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5E2B2E3B))
@@ -149,7 +160,8 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet https://datasheet.lcsc.com/szlcsc/2001071207_Viking-Tech-CR-05JA7-0R_C465486.pdf)
       (fields
-        (field (name Part) C465486))
+        (field (name Part) C465486)
+        (field (name Vendor) CR-05JA7----0R))
       (libsource (lib Device) (part R) (description Resistor))
       (sheetpath (names /) (tstamps /))
       (tstamp 5E2D3782))
@@ -207,7 +219,8 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet https://datasheet.lcsc.com/szlcsc/2001071207_Viking-Tech-CR-05JA7-0R_C465486.pdf)
       (fields
-        (field (name Part) C465486))
+        (field (name Part) C465486)
+        (field (name Vendor) CR-05JA7----0R))
       (libsource (lib Device) (part R) (description Resistor))
       (sheetpath (names /) (tstamps /))
       (tstamp 5E2942EF))
@@ -216,7 +229,8 @@
       (footprint Package_TO_SOT_SMD:SOT-23-5_HandSoldering)
       (datasheet https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-SN74LVC1G125DBVR_C23654.pdf)
       (fields
-        (field (name Part) C23654))
+        (field (name Part) C23654)
+        (field (name Vendor) SN74LVC1G125DBVR))
       (libsource (lib 74xGxx) (part 74LVC1G125) (description "Single Buffer Gate Tri-State, Low-Voltage CMOS"))
       (sheetpath (names /) (tstamps /))
       (tstamp 5E2638C3))
@@ -225,7 +239,8 @@
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder)
       (datasheet ~)
       (fields
-        (field (name Part) C193990))
+        (field (name Part) C193990)
+        (field (name Vendor) ERJ6ENF1000V))
       (libsource (lib Device) (part R) (description Resistor))
       (sheetpath (names /) (tstamps /))
       (tstamp 5DA9218E))

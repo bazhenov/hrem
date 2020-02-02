@@ -33,6 +33,7 @@ F 1 "Hall_Conn" V 8700 4100 50  0000 C CNN
 F 2 "hrem:X8821WRS-03-9TSN" H 8750 4100 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1906141836_XKB-Enterprise-X8821WRS-03-9TSN_C397433.pdf" H 8750 4100 50  0001 C CNN
 F 4 "C397433" H 8750 4100 50  0001 C CNN "Part"
+F 5 "X8821WRS-03-9TSN" H 8750 4100 50  0001 C CNN "Vendor"
 	1    8750 4100
 	0    1    -1   0   
 $EndComp
@@ -44,7 +45,8 @@ F 0 "C1" H 1918 1746 50  0000 L CNN
 F 1 "47uF" H 1918 1655 50  0000 L CNN
 F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-15_AVX-H_Pad1.50x2.35mm_HandSolder" H 1838 1550 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/AVX-TAJB476K010RNJ_C22036.pdf" H 1800 1700 50  0001 C CNN
-F 4 "TAJB476K010RNJ" H 1800 1700 50  0001 C CNN "Part"
+F 4 "C22036" H 1800 1700 50  0001 C CNN "Part"
+F 5 "TAJB476K010RNJ" H 1800 1700 50  0001 C CNN "Vendor"
 	1    1800 1700
 	1    0    0    -1  
 $EndComp
@@ -67,7 +69,8 @@ F 0 "C2" H 3818 1846 50  0000 L CNN
 F 1 "22uF" H 3818 1755 50  0000 L CNN
 F 2 "Capacitor_Tantalum_SMD:CP_EIA-3528-15_AVX-H_Pad1.50x2.35mm_HandSolder" H 3738 1650 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/AVX-TAJB226K010RNJ_C7198.pdf" H 3700 1800 50  0001 C CNN
-F 4 "TAJB226K010RNJ" H 3700 1800 50  0001 C CNN "Part"
+F 4 "C7198" H 3700 1800 50  0001 C CNN "Part"
+F 5 "TAJB226K010RNJ" H 3700 1800 50  0001 C CNN "Vendor"
 	1    3700 1800
 	1    0    0    -1  
 $EndComp
@@ -80,6 +83,7 @@ F 1 "SS14-E3/61T" H 2950 1325 50  0000 C CNN
 F 2 "Diode_SMD:D_SMA_Handsoldering" H 2950 1275 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Vishay-Intertech-SS14-E3-61T_C47460.pdf" H 2950 1450 50  0001 C CNN
 F 4 "C47460" H 2950 1450 50  0001 C CNN "Part"
+F 5 "SS14-E3/61T" H 2950 1450 50  0001 C CNN "Vendor"
 	1    2950 1450
 	-1   0    0    1   
 $EndComp
@@ -168,6 +172,7 @@ F 1 "680R" H 7350 4000 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7530 4050 50  0001 C CNN
 F 3 "~" H 7600 4050 50  0001 C CNN
 F 4 "C410034" H 7600 4050 50  0001 C CNN "Part"
+F 5 "ERJ6ENF6800V" H 7600 4050 50  0001 C CNN "Vendor"
 	1    7600 4050
 	-1   0    0    1   
 $EndComp
@@ -182,6 +187,7 @@ F 1 "10K" H 7100 4000 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7230 4050 50  0001 C CNN
 F 3 "~" H 7300 4050 50  0001 C CNN
 F 4 "C103904" H 7300 4050 50  0001 C CNN "Part"
+F 5 "RTT051002FTP" H 7300 4050 50  0001 C CNN "Vendor"
 	1    7300 4050
 	-1   0    0    1   
 $EndComp
@@ -317,6 +323,7 @@ F 1 "100uH" H 2150 1574 50  0000 C CNN
 F 2 "hrem:Murata LQH43" H 2150 1450 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Murata-Electronics-LQH43CN101K03L_C113087.pdf" H 2150 1450 50  0001 C CNN
 F 4 "C113087" H 2150 1450 50  0001 C CNN "Part"
+F 5 "LQH43CN101K03L" H 2150 1450 50  0001 C CNN "Vendor"
 	1    2150 1450
 	1    0    0    -1  
 $EndComp
@@ -348,6 +355,7 @@ F 1 "MMBT4401-7-F" V 7500 4950 50  0001 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 7800 4475 50  0001 L CIN
 F 3 "https://datasheet.lcsc.com/szlcsc/Diodes-Incorporated-MMBT4401-7-F_C151826.pdf" H 7600 4550 50  0001 L CNN
 F 4 "C151826" V 7600 4550 50  0001 C CNN "Part"
+F 5 "MMBT4401-7-F" H 7600 4550 50  0001 C CNN "Vendor"
 	1    7600 4550
 	0    1    1    0   
 $EndComp
@@ -382,6 +390,7 @@ F 1 "100R" V 8200 4550 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8230 4650 50  0001 C CNN
 F 3 "~" H 8300 4650 50  0001 C CNN
 F 4 "C193990" H 8300 4650 50  0001 C CNN "Part"
+F 5 "ERJ6ENF1000V" H 8300 4650 50  0001 C CNN "Vendor"
 	1    8300 4650
 	0    -1   -1   0   
 $EndComp
@@ -415,6 +424,7 @@ F 1 "SW_Push_Dual" V 7195 2848 50  0001 L CNN
 F 2 "hrem:Diptronics DTSM-65N" H 7150 2900 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Diptronics-DTSM-65N-V-T-R_C224982.pdf" H 7150 2900 50  0001 C CNN
 F 4 "C224982" H 7150 2700 50  0001 C CNN "Part"
+F 5 "DTSM-65N-V-T/R" H 7150 2700 50  0001 C CNN "Vendor"
 	1    7150 2700
 	1    0    0    -1  
 $EndComp
@@ -483,6 +493,7 @@ F 1 "74LVC1G125" H 8375 3084 50  0001 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 8400 3350 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-SN74LVC1G125DBVR_C23654.pdf" H 8400 3350 50  0001 C CNN
 F 4 "C23654" H 8400 3350 50  0001 C CNN "Part"
+F 5 "SN74LVC1G125DBVR" H 8400 3350 50  0001 C CNN "Vendor"
 	1    8400 3350
 	1    0    0    -1  
 $EndComp
@@ -542,6 +553,7 @@ F 1 "0R" V 8100 3500 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8130 3550 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/2001071207_Viking-Tech-CR-05JA7-0R_C465486.pdf" H 8200 3550 50  0001 C CNN
 F 4 "C465486" H 8200 3550 50  0001 C CNN "Part"
+F 5 "CR-05JA7----0R" H 8200 3550 50  0001 C CNN "Vendor"
 	1    8200 3550
 	0    -1   -1   0   
 $EndComp
@@ -674,6 +686,7 @@ F 1 "0R" V 7900 1450 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 7930 1500 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/2001071207_Viking-Tech-CR-05JA7-0R_C465486.pdf" H 8000 1500 50  0001 C CNN
 F 4 "C465486" H 8000 1500 50  0001 C CNN "Part"
+F 5 "CR-05JA7----0R" H 8000 1500 50  0001 C CNN "Vendor"
 	1    8000 1500
 	0    -1   -1   0   
 $EndComp
@@ -722,6 +735,7 @@ F 1 "74LVC1G125" H 7875 1934 50  0001 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 7900 2200 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Texas-Instruments-TI-SN74LVC1G125DBVR_C23654.pdf" H 7900 2200 50  0001 C CNN
 F 4 "C23654" H 7900 2200 50  0001 C CNN "Part"
+F 5 "SN74LVC1G125DBVR" H 7900 2200 50  0001 C CNN "Vendor"
 	1    7900 2200
 	1    0    0    -1  
 $EndComp
@@ -734,6 +748,7 @@ F 1 "100R" V 8500 2150 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8530 2200 50  0001 C CNN
 F 3 "~" H 8600 2200 50  0001 C CNN
 F 4 "C193990" H 8600 2200 50  0001 C CNN "Part"
+F 5 "ERJ6ENF1000V" H 8600 2200 50  0001 C CNN "Vendor"
 	1    8600 2200
 	0    -1   -1   0   
 $EndComp
