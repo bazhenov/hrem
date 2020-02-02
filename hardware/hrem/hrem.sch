@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "HRem"
-Date "2019-11-24"
-Rev "5"
+Date "2020-02-02"
+Rev "6"
 Comp "Denis Bazhenov"
 Comment1 ""
 Comment2 ""
