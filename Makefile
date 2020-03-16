@@ -3,7 +3,7 @@ MCU = attiny85
 PROGRAMMER ?= usbtiny
 
 CXX = avr-gcc
-CXXFLAGS = -Wall -Os -I. -mmcu=$(MCU) -DF_CPU=$(F_CPU)
+CXXFLAGS = -Wall -Os -I. -mmcu=$(MCU) -DF_CPU=$(F_CPU) -g
 
 all:	main.hex
 
@@ -25,4 +25,10 @@ clean:
 %.flash: %.hex
 	avrdude -c $(PROGRAMMER) -p $(MCU) -U flash:w:$<
 
-.PHONY: *.flash clean
+sim: main.bin
+	simavr -m $(MCU) -f $(F_CPU) -g $<
+
+gdb: main.bin
+	avr-gdb -ex "symbol-file $<" -ex "b main" -ex "target remote localhost:1234" -ex "continue"
+
+.PHONY: *.flash clean sim gdb
