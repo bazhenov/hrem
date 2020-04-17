@@ -1,4 +1,4 @@
-16919778328463145
+16941256049139818
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -42398,6 +42398,69 @@ connector
 0
 4
 4
+Connector_Wuerth
+Wuerth_WR-WTB_64800211622_1x02_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800211622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+2
+2
+Connector_Wuerth
+Wuerth_WR-WTB_64800311622_1x03_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800311622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+3
+3
+Connector_Wuerth
+Wuerth_WR-WTB_64800411622_1x04_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800411622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+4
+4
+Connector_Wuerth
+Wuerth_WR-WTB_64800511622_1x05_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800511622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+5
+5
+Connector_Wuerth
+Wuerth_WR-WTB_64800611622_1x06_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800611622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+6
+6
+Connector_Wuerth
+Wuerth_WR-WTB_64800711622_1x07_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800711622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+7
+7
+Connector_Wuerth
+Wuerth_WR-WTB_64800811622_1x08_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800811622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+8
+8
+Connector_Wuerth
+Wuerth_WR-WTB_64800911622_1x09_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64800911622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+9
+9
+Connector_Wuerth
+Wuerth_WR-WTB_64801011622_1x10_P1.50mm_Vertical
+Wuerth WR-WTB series connector, 64801011622 (https://katalog.we-online.com/em/datasheet/6480xx11622.pdf), generated with kicad-footprint-generator
+connector Wuerth WR-WTB vertical
+0
+10
+10
 Converter_ACDC
 Converter_ACDC_CUI_PBO-3-Sxx_THT_Vertical
 ACDC-Converter, 3W, CUI PBO-3, THT https://www.cui.com/product/resource/pbo-3.pdf
@@ -53423,6 +53486,13 @@ Maxim_WLP-12
 0
 12
 12
+Package_BGA
+Microchip_TFBGA-196_11x11mm_Layout14x14_P0.75mm_SMD
+TFBGA-196, 11.0x11.0mm, 196 Ball, 14x14 Layout, 0.75mm Pitch, http://ww1.microchip.com/downloads/en/DeviceDoc/SAMA5D2-Series-Data-Sheet-DS60001476C.pdf#page=2956
+BGA 196 0.75
+0
+196
+196
 Package_BGA
 TFBGA-64_5x5mm_Layout8x8_P0.5mm
 TFBGA-64, 8x8 raster, 5x5mm package, pitch 0.5mm; see section 6.3 of http://www.st.com/resource/en/datasheet/stm32f100v8.pdf

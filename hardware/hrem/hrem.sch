@@ -346,19 +346,6 @@ Wire Wire Line
 	8100 4700 8100 4650
 Wire Wire Line
 	7600 4350 7600 4300
-$Comp
-L Transistor_BJT:BC547 Q1
-U 1 1 5D9F33C3
-P 7600 4550
-F 0 "Q1" V 7850 4550 50  0000 C CNN
-F 1 "MMBT4401-7-F" V 7500 4950 50  0001 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 7800 4475 50  0001 L CIN
-F 3 "https://datasheet.lcsc.com/szlcsc/Diodes-Incorporated-MMBT4401-7-F_C151826.pdf" H 7600 4550 50  0001 L CNN
-F 4 "C151826" V 7600 4550 50  0001 C CNN "Part"
-F 5 "MMBT4401-7-F" H 7600 4550 50  0001 C CNN "Vendor"
-	1    7600 4550
-	0    1    1    0   
-$EndComp
 Text Notes 1500 4950 0    50   ~ 10
 Programming Header
 Wire Wire Line
@@ -851,4 +838,17 @@ Wire Wire Line
 Connection ~ 8000 3350
 Wire Wire Line
 	8100 3650 7150 3650
+$Comp
+L Device:Q_NPN_BCE Q1
+U 1 1 5E99FA84
+P 7600 4550
+F 0 "Q1" V 7836 4550 50  0000 C CNN
+F 1 "MMBT4401-7-F" V 7926 4550 50  0001 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 7800 4650 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Diodes-Incorporated-MMBT4401-7-F_C151826.pdf~" H 7600 4550 50  0001 C CNN
+F 4 "C151826" H 7600 4550 50  0001 C CNN "Part"
+F 5 "MMBT4401-7-F" H 7600 4550 50  0001 C CNN "Vendor"
+	1    7600 4550
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
