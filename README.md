@@ -8,7 +8,7 @@ This project contains firware code and KiCad schematics/PCB files for simple doo
 
 Me and my wife forget to close our flat entrance door from time to time. What will you do about that? :)
 
-This project is simple hardware solution to remind us about open door. It's not the simplest nor most elegant solution, but more like excuse for practicing skills in embedded software development and electrical engingeering.
+This project is simple hardware solution to remind us about open door. It's not the simplest nor most elegant solution, but more like excuse for practicing skills in embedded software development and electrical engineering.
 
 ## The solution
 
