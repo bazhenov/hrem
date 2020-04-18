@@ -25,6 +25,14 @@ Complete BOM is in project files, but here are key parts used in a project:
 1. [Honeywell SS49][SS19] hall effect sensor;
 1. [HT7733] as a voltage boost up controller. Single AAA battery is required.
 
+## Building firmware
+
+You need to have standart AVR toolchain is installed (e.g. `avr-gcc`, `avr-objcopy`...). Beyond that building firmware is as simple as:
+
+```
+$ make
+```
+
 ![schematics](./images/img3.png)
 ![PCB](./images/img1.png)
 ![PCB](./images/img2.png)
