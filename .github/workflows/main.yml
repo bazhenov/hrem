@@ -20,4 +20,4 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@master
-    - uses: bazhenov/actions/avr-make@v1.0
+    - uses: bazhenov/action-avr-make@v1.0
