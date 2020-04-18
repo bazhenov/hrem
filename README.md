@@ -1,6 +1,6 @@
 # HREM
 
-![CI](https://github.com/bazhenov/hrem/workflows/CI/badge.svg)
+![firmware](https://github.com/bazhenov/hrem/workflows/firmware/badge.svg)
 
 This project contains firware code and KiCad schematics/PCB files for simple door latch reminder.
 

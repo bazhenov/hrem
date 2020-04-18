@@ -1,4 +1,4 @@
-name: CI
+name: firmware
 
 on:
   push:
@@ -12,3 +12,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: bazhenov/action-avr-make@v1.0
+    - uses: actions/upload-artifact@v1
+      with:
+        name: main.bin
+        path: main.bin
+    - uses: actions/upload-artifact@v1
+      with:
+        name: main.hex
+        path: main.hex
